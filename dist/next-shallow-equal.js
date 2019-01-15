@@ -3,6 +3,8 @@
   var nx = global.nx || require('next-js-core2');
   var hasOwn = Object.prototype.hasOwnProperty;
 
+  //@thanks to: react-redux-1.0.0
+
   nx.shallowEqual = function(inTarget1, inTarget2) {
     if (inTarget1 === inTarget2) {
       return true;
