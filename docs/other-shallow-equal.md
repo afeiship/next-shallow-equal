@@ -16,10 +16,13 @@ function is(x, y) {
 
 export default function shallowEqual(objA, objB) {
   // 首先对基本数据类型的比较
+  // 1. 基本类似可以走这块逻辑，其它的会判断错，所以需要继续走后续逻辑判断
   if (is(objA, objB)) return true
   // 由于Obejct.is()可以对基本数据类型做一个精确的比较， 所以如果不等
   // 只有一种情况是误判的，那就是object,所以在判断两个对象都不是object
   // 之后，就可以返回false了
+
+  // 2. 这里，还是基本数据类型的判断，如果是基本数据类型，并且 is 逻辑不通过，则直接返回 false
   if (typeof objA !== 'object' || objA === null ||
       typeof objB !== 'object' || objB === null) {
     return false
