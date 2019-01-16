@@ -1,6 +1,7 @@
 var nx = require('next-js-core2');
 require('../src/next-shallow-equal');
 
+// https://imweb.io/topic/598973c2c72aa8db35d2e291
 test('nx.shallowEqual: shallow object', function() {
   var obj1 = { name: 'fei' };
   var obj2 = { name: 'fei' };
